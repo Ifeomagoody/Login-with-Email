@@ -1,0 +1,16 @@
+const mongoose = require('mongoose')   //this helps us communicate with our db
+const Schema = mongoose.Schema
+
+
+const UserVerificationSchema = new Schema({
+    userid: String,
+    uniqueString: String,         //a random String generated for a new user
+    createdAt:  Date,
+    expiresAt: Date,
+})
+
+
+const UserVerification= mongoose.model('UserVerification', UserVerificationSchema)
+
+
+module.exports = UserVerification
